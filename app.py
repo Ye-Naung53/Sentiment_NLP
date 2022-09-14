@@ -39,10 +39,11 @@ st.title('Automatic Sentiment Analysis for Myanmar Language')
 st.subheader("ERS NLP")
 sentence = st.text_area("Enter your news Content Here", height=200)
 sentence = tokenize(sentence)
+
 predict_btt = st.button("Predict")
 if predict_btt:
   data = vectorizer.transform([sentence]).toarray()
-  st.text(data)
+  st.text(sentence)
   prediction = loaded_model.predict(data)
   if prediction >0.75:
     st.text("This is Positive")

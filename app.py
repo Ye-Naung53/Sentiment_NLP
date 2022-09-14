@@ -42,6 +42,7 @@ sentence = tokenize(sentence)
 predict_btt = st.button("Predict")
 if predict_btt:
   data = vectorizer.transform([sentence]).toarray()
+  st.txt(data)
   prediction = loaded_model.predict(data)
   if prediction >0.75:
     st.text("This is Positive")
